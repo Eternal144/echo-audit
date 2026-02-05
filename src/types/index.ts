@@ -40,7 +40,7 @@ export interface Call {
   participants: Participant[];
   meta: CallMeta;
   kpis: KPIs;
-  highlights: Highlights;
+  highlights?: Highlights;
 }
 
 export interface Utterance {

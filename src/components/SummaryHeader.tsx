@@ -19,7 +19,7 @@ function formatCurrency(value: number): string {
 }
 
 export function SummaryHeader({ call }: SummaryHeaderProps) {
-  const { kpis, highlights, meta, call_type } = call;
+  const { kpis, meta, call_type } = call;
 
   return (
     <header className="top-0 z-50 bg-gray-900 border-b border-gray-700 shadow-lg">

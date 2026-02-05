@@ -35,7 +35,7 @@ export function StageNav({ stageScores, activeStage, onStageClick }: StageNavPro
                 key={stage}
                 onClick={() => onStageClick(stage)}
                 className={`
-                  flex items-center gap-2 px-3 py-2 rounded-lg border transition-all whitespace-nowrap
+                  flex items-center gap-2 px-3 py-2 rounded-lg border transition-all whitespace-nowrap cursor-pointer
                   ${getScoreBgColor(score)}
                   ${isActive ? 'ring-2 ring-white ring-offset-2 ring-offset-gray-900' : ''}
                 `}
