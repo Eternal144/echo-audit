@@ -1,4 +1,4 @@
-import type { CallData } from '../src/types';
+import type { CallData } from '../../src/types';
 
 export const callData: CallData = {
   call: {

@@ -1,73 +1,68 @@
-# React + TypeScript + Vite
+# Echo Audit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Echo Audit is a lightweight **React + TypeScript + Vite** frontend application for transcript auditing and structured conversation analysis.
 
-Currently, two official plugins are available:
+It converts raw transcripts into segmented stages (e.g. Introduction, Diagnosis, Resolution) and presents insights in an interactive review interface.  
+Designed for fast iteration, clear visualization, and demo-friendly deployment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Transcript → Uses AssemblyAI API to transcribe audio with speaker labels and auto chapters.
+- Stage-based conversation segmentation
+- Side-by-side transcript and analysis view
+- Static data for presentation
+- Modular, extensible component design
+- Fast local development with HMR
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Install
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Run locally
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Visit:
+
+```
+http://localhost:5173
+```
+
+### Build
+
+```bash
+npm run build
+```
+
+
+
+## Project Structure
+
+```
+src/
+  components/     reusable UI components
+  pages/          main views
+  data/           mock / generated call data
+  utils/          parsing and helpers
+public/           static assets
+scripts/ 					Data generation scripts
+vite.config.ts    Vite configuration
+```
+
+
+
+## Development Notes
+
+- Uses static data for simplicity and demo purposes
+- Data generation scripts can convert transcripts into structured callData
+- Easy to integrate with real APIs or AI analysis pipelines later

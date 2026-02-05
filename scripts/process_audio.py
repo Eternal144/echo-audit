@@ -7,12 +7,9 @@ import assemblyai as aai
 import json
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
-
-ASSEMBLYAI_API_KEY = "f10c528d13984fb6a55cb3018776b230"  # <-- Replace with your API Key
-
-
-client = OpenAI(api_key=)
+load_dotenv()
 
 # Resolve paths relative to this script's location
 SCRIPT_DIR = Path(__file__).resolve().parent

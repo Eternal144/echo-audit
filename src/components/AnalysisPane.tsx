@@ -67,10 +67,10 @@ function StageCard({ stage, onEvidenceClick, stageRef }: StageCardProps) {
                   key={ev.evidence_id}
                   onClick={() => onEvidenceClick(ev.utt_id)}
                   className="group relative px-3 py-1.5 bg-gray-700 hover:bg-blue-700 text-gray-200 text-xs rounded-full transition-colors cursor-pointer"
-                  title={ev.why_it_matters}
+                  // title={ev.why_it_matters}
                 >
                   <span className="truncate max-w-[200px] inline-block">"{ev.quote}"</span>
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-gray-200 text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-normal max-w-xs z-50">
+                   <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-gray-200 text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-normal w-max max-w-[200px] z-50">
                     {ev.why_it_matters}
                   </span>
                 </button>
